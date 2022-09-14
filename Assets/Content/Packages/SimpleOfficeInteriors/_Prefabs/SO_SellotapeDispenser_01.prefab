@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 407724}
   - component: {fileID: 3391534}
   - component: {fileID: 2325968}
+  - component: {fileID: 2932035275222768122}
   m_Layer: 0
   m_Name: SO_SellotapeDispenser_01
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2932035275222768122
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 8220c410918c2e7428145069db6371a3, type: 3}

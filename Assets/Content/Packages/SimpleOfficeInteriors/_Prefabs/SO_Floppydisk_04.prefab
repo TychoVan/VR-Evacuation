@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 472784}
   - component: {fileID: 3301588}
   - component: {fileID: 2325730}
+  - component: {fileID: -5152266672932539526}
   m_Layer: 0
   m_Name: SO_Floppydisk_04
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5152266672932539526
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c39385e567d763743acd2d92010d7955, type: 3}

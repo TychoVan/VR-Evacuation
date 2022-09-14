@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 420060}
   - component: {fileID: 3364968}
   - component: {fileID: 2379392}
+  - component: {fileID: 2930980750445604306}
   m_Layer: 0
   m_Name: SO_Monitor_01
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2930980750445604306
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 917650085fdcf344c86fe6da5ce7e04f, type: 3}

@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 437538}
   - component: {fileID: 3388056}
   - component: {fileID: 2357584}
+  - component: {fileID: 1112508902023351311}
   m_Layer: 0
   m_Name: SO_Wall_Elevator
   m_TagString: Untagged
@@ -251,3 +252,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1112508902023351311
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: fb805dc4b1adb1f4ab4fab17213a1696, type: 3}

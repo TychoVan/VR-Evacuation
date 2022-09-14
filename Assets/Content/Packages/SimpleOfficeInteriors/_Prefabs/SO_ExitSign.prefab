@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 475446}
   - component: {fileID: 3341406}
   - component: {fileID: 2319066}
+  - component: {fileID: 8738317160733909867}
   m_Layer: 0
   m_Name: SO_ExitSign
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8738317160733909867
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: f4c3ce43f1529cc4aa02402181f6f7ae, type: 3}
