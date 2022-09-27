@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Exits : MonoBehaviour
+namespace BNG
 {
-    public GameObject objects;
-
-    public void ObjectsOn()
+    public class Exits : MonoBehaviour
     {
-        objects.SetActive(true);
-    }
+        public GameObject objects;
 
-    public void ObjectsOff()
-    {
-        objects.SetActive(false);
+        public void ObjectsOn()
+        {
+            objects.SetActive(true);
+            Debug.Log("On");
+        }
+
+        public void ObjectsOff()
+        {
+            objects.SetActive(false);
+            Debug.Log("On");
+        }
+
+        public void DoorSettings(bool state)
+        {
+
+            
+            GetComponent<DoorHelper>().enabled = false;
+        }
     }
 }
