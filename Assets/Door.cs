@@ -11,6 +11,6 @@ public class Door : MonoBehaviour
 
     private void inializeDoors()
     {
-        doorSettings.DoorIsLocked = DoorLocked();
+        //doorSettings.DoorIsLocked = DoorLocked();
     }
 }
