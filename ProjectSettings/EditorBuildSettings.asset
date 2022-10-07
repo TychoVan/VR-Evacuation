@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Content/Scenes/MainGame.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Niels/Scenes/Main Menu.unity
+    guid: 877ad7c4044c32546b81603b8d6aa5df
+  - enabled: 1
+    path: Assets/Niels/Scenes/Layout.unity
+    guid: 6d245ef926f22c6408a540352b469109
+  - enabled: 1
+    path: Assets/Niels/Scenes/Lose.unity
+    guid: f1c94eebc65357241982fc4b3de42970
+  - enabled: 1
+    path: Assets/Niels/Scenes/Win.unity
+    guid: cdde908e04e57534d868196265065a79
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

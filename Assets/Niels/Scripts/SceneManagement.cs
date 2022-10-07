@@ -13,6 +13,11 @@ public class SceneManagement : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Layout");
+    }   
+    
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     public void Win()
