@@ -11,7 +11,7 @@ namespace Elevator
         [SerializeField] private ElevatorDoor[]     doors;
 
         private bool                                elevatorCalled;
-        [SerializeField ]private bool               elevatorReady;
+        [SerializeField ]private bool               elevatorReady           = false;
         private bool                                doorsOpened;
 
         [Tooltip("Time before the elevator doors open.")]
@@ -29,8 +29,13 @@ namespace Elevator
         [SerializeField] public float               closingDuration;
 
         [Header("Player death sequence.")]
+        [Tooltip("Event called when te player is insede the elevater while closing.")]
         [SerializeField] private UnityEvent         onPlayerInside;
         private bool                                playerInside;
+
+        //[Header("Audio settings")]
+        //[SerializeField] private AudioSource        elevatorDing;
+        //[SerializeField] private AudioSource        doorsMovingSound;
 
 
 
@@ -40,23 +45,32 @@ namespace Elevator
         }
 
 
-        public void CallElevator() {
-            if (!elevatorCalled   && !elevatorReady)     StartCoroutine(WaitForElevator());
+#region ElevatorCalling
+        /// <summary>
+        /// Actions taken when the call button is pushed.
+        /// </summary>
+        public void OnButtonPushed() {
+            if (!elevatorCalled   && !elevatorReady)     StartCoroutine(CallElevator());
             else if (!doorsOpened &&  elevatorReady)     StartCoroutine(ElevatorSequence());
         }
 
 
-        private IEnumerator WaitForElevator() {
+        // Wait until the elevator is ready.
+        private IEnumerator CallElevator() {
             elevatorCalled = true;
-            waitTime = Random.Range(randomWaitTime.x, randomWaitTime.y);
+            waitTime       = Random.Range(randomWaitTime.x, randomWaitTime.y);
             yield return new WaitForSeconds(waitTime);
-            
+
+            //elevatorDing.Play();
             StartCoroutine(ElevatorSequence());
-            elevatorReady = true;
+            elevatorReady  = true;
         }
+#endregion
 
 
-        #region OpenCloseSequence
+
+#region OpenCloseSequence
+        // Play the open and close sequence
         private IEnumerator ElevatorSequence() {
             OpenDoors();
             doorsOpened = true;
@@ -70,25 +84,31 @@ namespace Elevator
         }
 
 
+        // Start the opening sequence for all doors.
         private void OpenDoors() {
             for (int i = 0; i < doors.Length; i++) StartCoroutine(doors[i].OpenDoor(openingDuration));
         }
 
 
+        // Start the closing sequence for all doors.
         private void CloseDoors() {
             for (int i = 0; i < doors.Length; i++) StartCoroutine(doors[i].CloseDoor(closingDuration));
         }
-        #endregion
+#endregion
 
 
 
+#region CheckPlayerInside
+        // Check when player enters elevator.
         private void OnTriggerEnter(Collider other) {
             if (other.CompareTag("Player")) playerInside = true;
         }
 
+        // Check when player exits elevator.
         private void OnTriggerExit(Collider other)
         {
             if (other.CompareTag("Player")) playerInside = false;
         }
+#endregion
     }
 }
