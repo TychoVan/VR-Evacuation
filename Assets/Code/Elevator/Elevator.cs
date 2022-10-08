@@ -34,8 +34,11 @@ namespace Elevator
         private bool playerInside;
 
         [Header("Audio settings")]
+        [SerializeField] private AudioClip      elevatorMoving;
+        [SerializeField] private AudioClip      elevatorEndMoving;
+        [SerializeField] private AudioClip      doorsMoving;
         [SerializeField] private AudioSource    elevatorDing;
-        [SerializeField] private AudioSource    doorsMovingSound;
+        [SerializeField] private AudioSource    elevatorSounds;
 
 
 
@@ -58,10 +61,35 @@ namespace Elevator
         // Wait until the elevator is ready.
         private IEnumerator CallElevator() {
             elevatorCalled = true;
-            waitTime       = Random.Range(randomWaitTime.x, randomWaitTime.y);
-            yield return new WaitForSeconds(waitTime);
 
+            elevatorSounds.clip = elevatorMoving;
+            elevatorSounds.loop = true;
+            elevatorSounds.Play();
+            
+            waitTime       = Random.Range(randomWaitTime.x, randomWaitTime.y);
+            
+            // Fade in elevator audio.
+            float currentTime = 0;
+            float start = elevatorSounds.volume;
+            while (currentTime < waitTime)
+            {
+                currentTime += Time.deltaTime;
+                elevatorSounds.volume = Mathf.Lerp(0.25f, 0.75f, currentTime / waitTime);
+                yield return null;
+            }
+
+            // Play end of elevator moving sound.
+            elevatorSounds.Stop();
+            elevatorSounds.loop = false;
+            elevatorSounds.clip = elevatorEndMoving;
+            elevatorSounds.Play();
+
+            // Play elevator arrival sound.
             elevatorDing.Play();
+
+            yield return new WaitForSeconds (elevatorEndMoving.length);
+
+
             StartCoroutine(ElevatorSequence());
             elevatorReady  = true;
         }
@@ -73,18 +101,37 @@ namespace Elevator
         // Play the open and close sequence
         private IEnumerator ElevatorSequence() {
             OpenDoors();
-            doorsMovingSound.Play();
-            doorsOpened = true;
-            yield return new WaitForSeconds(openingDuration);
 
-            doorsMovingSound.Stop();
+            elevatorSounds.clip = doorsMoving;
+            elevatorSounds.Play();
+
+            doorsOpened = true;
+
+            // Fade out elevator doors sound.
+            float currentTime = 0;
+            while (currentTime < openingDuration)
+            {
+                currentTime += Time.deltaTime;
+                elevatorSounds.volume = Mathf.Lerp(1, 0f, currentTime / openingDuration);
+                yield return null;
+            }
+
+            elevatorSounds.Stop();
             yield return new WaitForSeconds(openTime);
 
             CloseDoors();
-            doorsMovingSound.Play();
-            yield return new WaitForSeconds(closingDuration);
+            elevatorSounds.Play();
 
-            doorsMovingSound.Stop();
+            // Fade out elevator doors sound.
+            currentTime = 0;
+            while (currentTime < openingDuration)
+            {
+                currentTime += Time.deltaTime;
+                elevatorSounds.volume = Mathf.Lerp(1, 0f, currentTime / closingDuration);
+                yield return null;
+            }
+
+            elevatorSounds.Stop();
             doorsOpened = false;
             if (playerInside) onPlayerInside.Invoke();
         }
