@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 namespace Elevator
@@ -8,6 +9,7 @@ namespace Elevator
     public class Elevator : MonoBehaviour
     {
         [SerializeField] private ElevatorDoor[]     doors;
+
         private bool                                elevatorCalled;
         [SerializeField ]private bool               elevatorReady;
         private bool                                doorsOpened;
@@ -25,6 +27,10 @@ namespace Elevator
 
         [Tooltip("Time it takes for the doors to close.")]
         [SerializeField] public float               closingDuration;
+
+        [Header("Player death sequence.")]
+        [SerializeField] private UnityEvent         onPlayerInside;
+        private bool                                playerInside;
 
 
 
@@ -50,6 +56,7 @@ namespace Elevator
         }
 
 
+        #region OpenCloseSequence
         private IEnumerator ElevatorSequence() {
             OpenDoors();
             doorsOpened = true;
@@ -58,6 +65,7 @@ namespace Elevator
             CloseDoors();
             yield return new WaitForSeconds(closingDuration);
 
+            if (playerInside) onPlayerInside.Invoke();
             doorsOpened = false;
         }
 
@@ -69,6 +77,18 @@ namespace Elevator
 
         private void CloseDoors() {
             for (int i = 0; i < doors.Length; i++) StartCoroutine(doors[i].CloseDoor(closingDuration));
+        }
+        #endregion
+
+
+
+        private void OnTriggerEnter(Collider other) {
+            if (other.CompareTag("Player")) playerInside = true;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.CompareTag("Player")) playerInside = false;
         }
     }
 }
