@@ -10,10 +10,16 @@ namespace Elevator
         [SerializeField] private AnimationCurve OpenAnimation;
         [SerializeField] private AnimationCurve CloseAnimation;
 
-        [field: SerializeField] public Vector3  ClosedPositon   { get; private set; }
-        [field: SerializeField] public Vector3  OpenPosition    { get; private set; }
+        [SerializeField] private Vector3        openPosition;
+        private Vector3                         startPositon;
 
 
+
+
+        private void Start()
+        {
+            startPositon = transform.position;
+        }
 
 
         /// <summary>
@@ -23,7 +29,7 @@ namespace Elevator
         public IEnumerator OpenDoor(float openingTime) {
             float timer = 0.0f;
             while (timer <= openingTime) {
-                transform.position = Vector3.Lerp(ClosedPositon, OpenPosition, OpenAnimation.Evaluate(timer / openingTime));
+                transform.position = Vector3.Lerp(startPositon, startPositon + openPosition, OpenAnimation.Evaluate(timer / openingTime));
                 timer += Time.deltaTime;
                 yield return null;
             }
@@ -37,7 +43,7 @@ namespace Elevator
         public IEnumerator CloseDoor(float closingTime) {
             float timer = 0.0f;
             while (timer <= closingTime) {
-                transform.position = Vector3.Lerp(OpenPosition, ClosedPositon, OpenAnimation.Evaluate(timer / closingTime));
+                transform.position = Vector3.Lerp(startPositon + openPosition, startPositon, OpenAnimation.Evaluate(timer / closingTime));
                 timer += Time.deltaTime;
                 yield return null;
             }

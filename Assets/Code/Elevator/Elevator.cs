@@ -10,23 +10,23 @@ namespace Elevator
     {
         [SerializeField] private ElevatorDoor[] doors;
 
-        private bool elevatorCalled;
-        [SerializeField] private bool elevatorReady = false;
-        private bool doorsOpened;
+        private bool                            elevatorCalled;
+        [SerializeField] private bool           elevatorReady = false;
+        private bool                            doorsOpened;
 
         [Tooltip("Time before the elevator doors open.")]
         [SerializeField] public Vector2         randomWaitTime;
-        [SerializeField] public float       waitTime;
+        [SerializeField] public float           waitTime;
 
 
         [Tooltip("Time it takes for the doors to open")]
-        [SerializeField] public float       openingDuration;
+        [SerializeField] public float           openingDuration;
 
         [Tooltip("Time the doors stay open.")]
-        [SerializeField] public float       openTime;
+        [SerializeField] public float           openTime;
 
         [Tooltip("Time it takes for the doors to close.")]
-        [SerializeField] public float       closingDuration;
+        [SerializeField] public float           closingDuration;
 
         [Header("Player death sequence.")]
         [Tooltip("Event called when te player is insede the elevater while closing.")]

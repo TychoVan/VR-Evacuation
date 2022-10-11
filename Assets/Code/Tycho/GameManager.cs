@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using ProceduralGeneration;
 
 
@@ -38,5 +39,11 @@ public class GameManager : MonoBehaviour
     {
         StartingRoom.OpenRandomDoor();
         Debug.Log("Generating path..");
+    }
+
+
+    public void TempDeath()
+    {
+        SceneManager.LoadScene("Lose");
     }
 }

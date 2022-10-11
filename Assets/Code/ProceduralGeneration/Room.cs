@@ -15,7 +15,6 @@ namespace ProceduralGeneration
         public void OpenRandomDoor()
         {
             int i = Random.Range(0, Doors.Count);
-            Debug.Log("Opened door" + Doors[i].gameObject.name);
             Doors[i].EnableDoor();
         }
     }

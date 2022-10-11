@@ -158,8 +158,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <ClosedPositon>k__BackingField: {x: 0, y: 0, z: 0}
-  <OpenPosition>k__BackingField: {x: 1, y: 0, z: 0}
+  openPosition: {x: 0, y: 0, z: -1.82}
 --- !u!1 &186150809734849034
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +181,7 @@ GameObject:
   - component: {fileID: 1953420765620372232}
   - component: {fileID: 2277082693556845477}
   - component: {fileID: 8057182328418554474}
+  - component: {fileID: 8190242675333000979}
   m_Layer: 0
   m_Name: PF_Elevator
   m_TagString: Untagged
@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 186150809734849034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.615, y: 0.615, z: 0.615}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 186150809734585422}
@@ -472,8 +472,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.694015, y: 4.685127, z: 4.9828267}
-  m_Center: {x: -2.8470094, y: 2.0719001, z: -2.376485}
+  m_Size: {x: 4.9859843, y: 4.685127, z: 4.982827}
+  m_Center: {x: -2.492993, y: 2.0719001, z: -2.376485}
 --- !u!65 &1953420765620372232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -513,6 +513,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 0.15, z: 0.15}
   m_Center: {x: -2.5, y: 1.45, z: -4.6}
+--- !u!65 &8190242675333000979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186150809734849034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.995005, y: 0.19826978, z: 4.982827}
+  m_Center: {x: -2.4975057, y: -0.17152853, z: -2.376485}
 --- !u!1 &186150809734914434
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,8 +684,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  <ClosedPositon>k__BackingField: {x: 0, y: 0, z: 0}
-  <OpenPosition>k__BackingField: {x: -1, y: 0, z: 0}
+  openPosition: {x: 0, y: 0, z: 1.82}
 --- !u!1 &309834178257761752
 GameObject:
   m_ObjectHideFlags: 0
