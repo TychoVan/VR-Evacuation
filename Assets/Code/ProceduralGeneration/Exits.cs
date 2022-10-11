@@ -34,7 +34,7 @@ namespace ProceduralGeneration
                 }
             }
     
-            NextRoom.OpenRandomDoor();
+            //NextRoom.OpenRandomDoor();
         }
     }
 }
