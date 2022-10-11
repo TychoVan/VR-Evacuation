@@ -15,13 +15,12 @@ namespace BNG
         // Update is called once per frame
         void Update()
         {
-            if (InputBridge.Instance.YButton)
+            if (InputBridge.Instance.YButtonDown)
             {
-                if (isActiveAndEnabled)
-                {
-
-                }
-                pauseMenu.SetActive(true);
+                if (pauseMenu.activeInHierarchy)
+                    pauseMenu.SetActive(false);
+                else if (!pauseMenu.activeInHierarchy)
+                    pauseMenu.SetActive(true);
             }
         }
     }
