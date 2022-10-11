@@ -179,6 +179,9 @@ GameObject:
   - component: {fileID: 186150809732684271}
   - component: {fileID: 186150809732684270}
   - component: {fileID: 186150809732684179}
+  - component: {fileID: 1953420765620372232}
+  - component: {fileID: 2277082693556845477}
+  - component: {fileID: 8057182328418554474}
   m_Layer: 0
   m_Name: PF_Elevator
   m_TagString: Untagged
@@ -471,6 +474,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.694015, y: 4.685127, z: 4.9828267}
   m_Center: {x: -2.8470094, y: 2.0719001, z: -2.376485}
+--- !u!65 &1953420765620372232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186150809734849034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16395493, y: 0.15155165, z: 4.982827}
+  m_Center: {x: -0.47099012, y: 1.4528435, z: -2.376485}
+--- !u!65 &2277082693556845477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186150809734849034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15, z: 4.5}
+  m_Center: {x: -4.62, y: 1.45, z: -2.376485}
+--- !u!65 &8057182328418554474
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186150809734849034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.5, y: 0.15, z: 0.15}
+  m_Center: {x: -2.5, y: 1.45, z: -4.6}
 --- !u!1 &186150809734914434
 GameObject:
   m_ObjectHideFlags: 0

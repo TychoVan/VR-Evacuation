@@ -74,7 +74,7 @@ namespace Elevator
             while (currentTime < waitTime)
             {
                 currentTime += Time.deltaTime;
-                elevatorSounds.volume = Mathf.Lerp(0.25f, 0.75f, currentTime / waitTime);
+                elevatorSounds.volume = Mathf.Lerp(0.25f, 1f, currentTime / waitTime);
                 yield return null;
             }
 
