@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private float timer = 300;
+    public float Timer = 300;
     [SerializeField] private Room StartingRoom;
 
 
-
+    public bool GameStart = false;
 
     private void Awake()
     {
@@ -54,9 +54,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
+        if (GameStart == true)
+        {
+            Timer -= Time.deltaTime;
 
-        if (timer <= 0)
-            SceneManager.LoadScene("Lose");
+            if (Timer <= 0)
+                SceneManager.LoadScene("Lose");
+        }
     }
 }
