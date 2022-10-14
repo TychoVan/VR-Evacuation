@@ -12,7 +12,11 @@ namespace BNG
 
         public GameObject pauseMenu;
 
-        // Update is called once per frame
+        private void Start()
+        {
+            pauseMenu.SetActive(false);
+        }
+
         void Update()
         {
             if (InputBridge.Instance.YButtonDown)
