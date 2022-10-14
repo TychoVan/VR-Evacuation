@@ -7,9 +7,6 @@ namespace BNG
 {
     public class Pause : MonoBehaviour
     {
-        [Tooltip("Input Action used to initiate slow time")]
-        public InputActionReference SlowTimeAction;
-
         public GameObject pauseMenu;
 
         private void Start()
