@@ -7,21 +7,21 @@ namespace BNG
 {
     public class Pause : MonoBehaviour
     {
-        [Tooltip("Input Action used to initiate slow time")]
-        public InputActionReference SlowTimeAction;
-
         public GameObject pauseMenu;
 
-        // Update is called once per frame
+        private void Start()
+        {
+            pauseMenu.SetActive(false);
+        }
+
         void Update()
         {
-            if (InputBridge.Instance.YButton)
+            if (InputBridge.Instance.YButtonDown)
             {
-                if (isActiveAndEnabled)
-                {
-
-                }
-                pauseMenu.SetActive(true);
+                if (pauseMenu.activeInHierarchy)
+                    pauseMenu.SetActive(false);
+                else if (!pauseMenu.activeInHierarchy)
+                    pauseMenu.SetActive(true);
             }
         }
     }
