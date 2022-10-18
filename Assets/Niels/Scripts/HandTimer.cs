@@ -16,6 +16,6 @@ public class HandTimer : MonoBehaviour
     void Update()
     {
         //TimerText.text = gameManager.Timer.ToString("");
-        TimerText.text = "" + gameManager.GameDuration.ToString("f0");
+        TimerText.text = "" + gameManager.Timer.ToString("f0");
     }
 }

@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class GameEnter : MonoBehaviour
 {
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        // Check if player is nearby and start the game timer.
-        if (other.gameObject.CompareTag("Player")) GameManager.Instance.GameStart = true;
+        if (gameManager != null)
+            if (other.gameObject.CompareTag("Player"))
+                gameManager.GameStart = true;
     }
 }
