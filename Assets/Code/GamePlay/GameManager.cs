@@ -1,22 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using ProceduralGeneration;
 
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager       Instance { get; private set; }
 
-    public float Timer = 300;
-    [SerializeField] private Room StartingRoom;
+    [SerializeField] private Room   StartingRoom;
+    public float                    GameDuration        = 300;
+
+    public bool                     GameStart           = false;
+    public UnityEvent               OnTimeUp;
 
 
-    public bool GameStart = false;
 
-    private void Awake()
-    {
+
+    private void Awake() {
         #region Singleton
         if (Instance != null && Instance != this)
         {
@@ -30,8 +34,8 @@ public class GameManager : MonoBehaviour
     }
 
     
-    private void Start()
-    {
+    private void Start() {
+        // Start path generation.
         StartGeneratingPath();
     }
 
@@ -39,27 +43,30 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Open the first door to start a chain of doors opening.
     /// </summary>
-    private void StartGeneratingPath()
-    {
+    private void StartGeneratingPath() {
         StartingRoom.OpenRandomDoor();
-        Debug.Log("Generating path..");
     }
 
 
-    public void TempDeath()
+    private void Update()  {
+        if (GameStart) GameTimer();
+    }
+
+
+    /// <summary>
+    /// Count down game duration then invoke game end.
+    /// </summary>
+    private void GameTimer()
     {
+            GameDuration -= Time.deltaTime;
+            if (GameDuration <= 0) OnTimeUp.Invoke();
+    }
+
+
+
+
+    // Temporary
+    public void TempDeath() {
         SceneManager.LoadScene("Lose");
-    }
-
-
-    private void Update()
-    {
-        if (GameStart == true)
-        {
-            Timer -= Time.deltaTime;
-
-            if (Timer <= 0)
-                SceneManager.LoadScene("Lose");
-        }
     }
 }
