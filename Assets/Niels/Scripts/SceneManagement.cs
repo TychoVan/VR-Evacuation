@@ -5,6 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public static SceneManagement           Instance    { get; private set; }
+    [field: SerializeField] public string   DeathReason { get; private set; }
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        #region Singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+        #endregion
+    }
+
+
     public void MainMenu()
     {
         SceneManager.LoadScene("Main Menu");
@@ -25,8 +46,9 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Win");
     }
 
-    public void Lose()
+    public void Lose(string reason)
     {
+        DeathReason = reason;
         SceneManager.LoadScene("Lose");
     }
 

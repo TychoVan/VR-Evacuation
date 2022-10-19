@@ -6878,7 +6878,7 @@ GameObject:
   - component: {fileID: 163458722}
   - component: {fileID: 163458721}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6896,6 +6896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71b4a4fa5433ba48b1737acd63a0b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <DeathReason>k__BackingField: 
 --- !u!4 &163458722
 Transform:
   m_ObjectHideFlags: 0

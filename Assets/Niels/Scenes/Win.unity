@@ -60196,10 +60196,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1536699587}
-  - component: {fileID: 1536699586}
   - component: {fileID: 1536699585}
   m_Layer: 0
-  m_Name: WinScene
+  m_Name: SceneLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60215,18 +60214,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b71b4a4fa5433ba48b1737acd63a0b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1536699586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536699584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 935482e301d43c44080d567c1985a0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1536699587
