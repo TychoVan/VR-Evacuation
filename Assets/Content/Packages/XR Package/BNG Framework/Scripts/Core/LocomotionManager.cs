@@ -94,18 +94,12 @@ namespace BNG {
             ChangeLocomotion(SelectedLocomotion == LocomotionType.SmoothLocomotion ? LocomotionType.Teleport : LocomotionType.SmoothLocomotion, LoadLocomotionFromPrefs);
         }
 
-        public void UpdateTeleportStatus() {
-            teleport.enabled = SelectedLocomotion == LocomotionType.Teleport;
-        }
-
         public void ChangeLocomotion(LocomotionType locomotionType, bool save) {
             ChangeLocomotionType(locomotionType);
 
             if (save) {
                 PlayerPrefs.SetInt("LocomotionSelection", locomotionType == LocomotionType.Teleport ? 0 : 1);
             }
-
-            UpdateTeleportStatus();
         }
 
         public void ChangeLocomotionType(LocomotionType loc) {
@@ -117,36 +111,12 @@ namespace BNG {
                 smoothLocomotion = GetComponentInChildren<SmoothLocomotion>();
             }
 
-            if (teleport == null) {
-                teleport = GetComponentInChildren<PlayerTeleport>();
-            }
-
-            toggleTeleport(selectedLocomotion == LocomotionType.Teleport);
             toggleSmoothLocomotion(selectedLocomotion == LocomotionType.SmoothLocomotion);
-        }
-
-        void toggleTeleport(bool enabled) {
-            if (enabled) {
-                teleport.EnableTeleportation();
-            }
-            else {
-                teleport.DisableTeleportation();
-            }
         }
 
         void toggleSmoothLocomotion(bool enabled) {
             if (smoothLocomotion) {
                 smoothLocomotion.enabled = enabled;
-            }
-        }
-
-        public void ToggleLocomotionType() {
-            // Toggle based on last value
-            if (selectedLocomotion == LocomotionType.SmoothLocomotion) {
-                ChangeLocomotionType(LocomotionType.Teleport);
-            }
-            else {
-                ChangeLocomotionType(LocomotionType.SmoothLocomotion);
             }
         }
     }
