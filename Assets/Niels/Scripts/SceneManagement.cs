@@ -8,10 +8,9 @@ public class SceneManagement : MonoBehaviour
     public static SceneManagement           Instance    { get; private set; }
     [field: SerializeField] public string   DeathReason { get; private set; }
 
-
+        
     private void Awake()
     {
-        DontDestroyOnLoad(this);
 
         #region Singleton
         if (Instance != null && Instance != this)
@@ -21,8 +20,10 @@ public class SceneManagement : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         #endregion
+
     }
 
 

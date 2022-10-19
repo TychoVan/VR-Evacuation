@@ -133,7 +133,7 @@ namespace Elevator
 
             elevatorSounds.Stop();
             doorsOpened = false;
-            if (playerInside) onPlayerInside.Invoke();
+            if (playerInside) SceneManagement.Instance.Lose("Bababoey");
         }
 
 
