@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 430908}
   - component: {fileID: 3323696}
   - component: {fileID: 2339172}
-  - component: {fileID: 3847651246712021280}
+  - component: {fileID: 6727485929403806856}
   m_Layer: 0
   m_Name: SO_Couch_04
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3847651246712021280
-MeshCollider:
+--- !u!65 &6727485929403806856
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 01c48a4e128a990488debb69068f1eee, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.8785605, y: 1.2339442, z: 1.5330453}
+  m_Center: {x: 0.0000005364418, y: 0.6169721, z: -0.0000009834766}

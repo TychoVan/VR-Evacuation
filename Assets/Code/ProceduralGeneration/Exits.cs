@@ -33,8 +33,9 @@ namespace ProceduralGeneration
                     BlockingObject.SetActive(true);
                 }
             }
-    
-            //NextRoom.OpenRandomDoor();
+
+            if (NextRoom != null)
+                NextRoom.OpenRandomDoor();
         }
     }
 }

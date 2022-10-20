@@ -6,6 +6,7 @@ public class GameEnter : MonoBehaviour
 {
     private GameManager gameManager;
     public GameObject Water;
+    public Animator SoundAnim;
 
     private void Start()
     {
@@ -22,7 +23,9 @@ public class GameEnter : MonoBehaviour
     {
         if (gameManager != null)
             if (other.gameObject.CompareTag("Player"))
+            {
                 gameManager.GameStart = true;
-
+                SoundAnim.Play("SoundTransition");
+            }
     }
 }

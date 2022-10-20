@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 414502}
   - component: {fileID: 3301326}
   - component: {fileID: 2330798}
-  - component: {fileID: 2386741041794331978}
+  - component: {fileID: 6848884145697176149}
   m_Layer: 0
   m_Name: SO_Bookbox_03
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2386741041794331978
-MeshCollider:
+--- !u!65 &6848884145697176149
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: f7e6c16df4a5d1d42ab3fdc66f878f42, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.0182829, y: 0.950047, z: 0.7285652}
+  m_Center: {x: -0.0025305748, y: 0.4750235, z: -0.0009059906}
